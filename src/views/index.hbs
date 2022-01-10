@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +16,38 @@
             <form>
                 <div class="form-group">
                     <label for="buckets">Buckets</label>
-                    <select name="buckets" id="buckets" class="form-control"></select>
-                </div>
+                    <select name="buckets" id="buckets" class="form-control">
+                        {{#each buckets}}
+                        <option value="{{this.Name}}">{{this.Name}}</option>
+                        {{/each}}
+                    </select>
+                </div><br>
                 <div class="form-group">
                     <label for="file">File</label>
+                    <br>
                     <input type="file" name="file" id="file" class="form-control-file" />
-                </div>
+                </div><br>
                 <input type="submit" value="Upload" id="upload" class="btn btn-primary">
             </form>
+            <hr />
+            <table class="table table-bordered">
+                <tr>
+                    <td>Result</td>
+                    <td>Download</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/no-available.png" alt="no-image" id="image" width="150" height="100">
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-primary" id="link">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
+    <script src='js/upload.js'></script>
 </body>
 </html>
